@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  {% include 'nav.html' %}
+    
+  <form action="{% url 'add-post' %}" method='POST'>
+  
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type='submit' value='Save'>
+
+  </form>
+
+  <a href="/accounts/profile" class="btn btn-primary">Return to profile</a>
+{% endblock %}

@@ -13,9 +13,5 @@ class SignUpView(generic.CreateView):
 def ProfileView(request):
     model = models.Post
     posts = model.objects.all()
-    form = forms.PostForm(request.POST or None)
-    if form.is_valid():
-        obj = form.save(commit=False)
-        obj.author = request.user
-        obj.save()
-    return render(request,'userprofile.html',{'posts':posts,'form':form})
+
+    return render(request,'userprofile.html',{'posts':posts})

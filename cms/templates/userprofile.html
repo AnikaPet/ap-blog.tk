@@ -5,6 +5,7 @@
   {% include 'nav.html' %}
   
     <h1>Your posts</h1>
+    <a href="/blog/add-post/" class="btn btn-primary">Add new post</a>
 
     <form action="search/" method="get" class ="d-flex">
       <input name="q" type="text" placeholder="Search...">
@@ -17,12 +18,13 @@
       <div class="card-header">
         Your post
       </div>
+      
       <div class="card-body">
         <h5 class="card-title">{{post.title}}</h5>
         <p class="card-text">....</p>
         <a href="/blog/{{post.id}}" class="btn btn-primary">Read</a>
 
-        <a href="" class="btn btn-primary">Edit</a>
+        <a href="/blog/edit-post/{{post.id}}" class="btn btn-primary">Edit</a>
 
           <a href="/blog/delete/{{post.id}}" class="btn btn-primary" onclick="return confirm('Are you sure?')" >Delete</a>
 
@@ -33,15 +35,6 @@
     </div>
     {%endif%}
     {% endfor %}
-
-
-    <form action="{% url 'user-profile' %}" method='POST'>
-  
-      {% csrf_token %}
-      {{form.as_p}}
-      <input type='submit' value='Save'>
-
-    </form>
 
 
 {% endblock %}
