@@ -6,6 +6,10 @@
   
     <h1>All posts</h1>
 
+    <form action="search/" method="get">
+      <input name="q" type="text" placeholder="Search...">
+    </form>
+    
     {% for post in posts %}
     <div class="card" style="width: 18rem;">
         <div class="card-body">
