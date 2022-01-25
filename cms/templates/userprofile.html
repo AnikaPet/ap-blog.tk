@@ -19,9 +19,17 @@
             {{post.created}}
           </p>
           <a href="/blog/{{forloop.counter}}" class="btn btn-primary">See details.</a>
+          <a href="" class="btn btn-primary">Edit.</a>
+          <a href="" class="btn btn-primary">Delete.</a>
         </div>
       </div>
     {%endif%}
     {% endfor %}
+
+    <form action="{% url 'user-profile' %}" method='POST'>
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type='submit' value='Save'>
+    </form>
 
 {% endblock %}
