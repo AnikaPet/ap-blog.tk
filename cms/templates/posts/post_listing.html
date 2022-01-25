@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  {% include 'nav.html' %}
+  
+    <h1>All posts</h1>
+
+    {% for post in posts %}
+    <div class="card" style="width: 18rem;">
+        <img src={{band.image}} class="card-img-top" alt="Band image">
+        <div class="card-body">
+          <h5 class="card-title">{{post.title}}</h5>
+          <p class="card-text">
+            {{post.created}}
+          </p>
+          <a href="/blog/posts/{{forloop.counter}}" class="btn btn-primary">See details.</a>
+        </div>
+      </div>
+      {% endfor %}
+
+{% endblock %}
