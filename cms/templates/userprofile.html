@@ -21,7 +21,11 @@
         <h5 class="card-title">{{post.title}}</h5>
         <p class="card-text">....</p>
         <a href="/blog/{{post.id}}" class="btn btn-primary">Read</a>
-        <a href="#" class="btn btn-primary">Edit</a>
+
+        <a href="" class="btn btn-primary">Edit</a>
+
+          <a href="/blog/delete/{{post.id}}" class="btn btn-primary" onclick="return confirm('Are you sure?')" >Delete</a>
+
       </div>
       <div class="card-footer text-muted">
         {{post.created}}

@@ -24,3 +24,9 @@ def post_search(request):
     except:
         queried_post_exists = False
     return render(request,'posts/post_searched.html',{'post':post,'results':queried_post_exists})
+
+def delete_post(request,post_id):
+    post = Post.objects.get(pk=post_id)
+    post.delete()
+    return render(request,'posts/delete_post.html',{'post':post})
+    
