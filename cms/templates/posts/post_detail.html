@@ -4,8 +4,16 @@
 
 {% include 'nav.html' %}
 
+<div class="containter" style="text-align-last: center;">
+  <div style="display: inline-block;">
+      <h1 style="text-align:center;">Post details</h1>
+  </div>
+  <div style="display: inline-block;margin-left: 20px;">
     <a href="/blog/" class="btn btn-primary"> <- See all posts</a>
-    <h1>Post details</h1>
+  </div>
+</div>
+
+<div class='container' style="padding: 2ch;">
 
     <div class="card text-center">
       <div class="card-header">
@@ -19,5 +27,5 @@
         {{post.created}}
       </div>
     </div>
-    
+  </div>    
 {% endblock %}

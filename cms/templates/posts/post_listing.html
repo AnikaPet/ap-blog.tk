@@ -4,13 +4,21 @@
 
   {% include 'nav.html' %}
   
-    <h1>All posts</h1>
 
-    <form action="search/" method="get" class ="d-flex">
-      <input name="q" type="text" placeholder="Search...">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-    
+  <div class="containter" style="text-align-last: center;">
+    <div style="display: inline-block;">
+        <h1 style="text-align:center;">All posts</h1>
+    </div>
+    <div style="display: inline-block;margin-left: 20px;">
+      <form action="search/" method="get" class ="d-flex">
+        <input name="q" type="text" placeholder="Search...">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+
+    <div class='container' style="padding: 2ch;">
+
     {% for post in posts %}
     <div class="card text-center">
       <div class="card-header">
@@ -26,5 +34,5 @@
       </div>
     </div>
       {% endfor %}
-
+    </div>
 {% endblock %}
