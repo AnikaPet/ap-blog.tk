@@ -103,6 +103,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+LOGIN_REDIRECT_URL = 'about-us'
+LOGOUT_REDIRECT_URL = 'about-us' # new
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
