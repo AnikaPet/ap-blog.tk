@@ -104,7 +104,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LOGIN_REDIRECT_URL = 'about-us'
+#LOGIN_REDIRECT_URL = 'about-us'
 LOGOUT_REDIRECT_URL = 'about-us' # new
 
 # Internationalization
