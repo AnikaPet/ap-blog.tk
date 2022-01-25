@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from .models import Post
 
+def about_us(request):
+    return render(request,'about_us.html')
+
 def post_listing(request):
     '''A view of all blog posts.'''
     posts = Post.objects.all()  
