@@ -44,6 +44,7 @@ def add_post(request):
     return render(request,'posts/add_post.html',{'posts':posts,'form':form})
 
 def edit_post(request,post_id):
+    
     posts = Post.objects.all()
     instance = Post.objects.get(pk=post_id)
     form = PostForm(request.POST or None,instance=instance)
@@ -52,4 +53,4 @@ def edit_post(request,post_id):
         obj.author = request.user
         obj.save()
 
-    return render(request,'posts/edit_post.html',{'posts':posts,'form':form})
+    return render(request,'posts/edit_post.html',{'form':form,'posts':posts})
