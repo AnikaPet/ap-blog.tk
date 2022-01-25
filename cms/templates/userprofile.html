@@ -6,30 +6,38 @@
   
     <h1>Your posts</h1>
 
-    <form action="search/" method="get">
+    <form action="search/" method="get" class ="d-flex">
       <input name="q" type="text" placeholder="Search...">
+      <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
     
     {% for post in posts %}
     {%if post.author == request.user %}
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">{{post.title}}</h5>
-          <p class="card-text">
-            {{post.created}}
-          </p>
-          <a href="/blog/{{forloop.counter}}" class="btn btn-primary">See details.</a>
-          <a href="" class="btn btn-primary">Edit.</a>
-          <a href="" class="btn btn-primary">Delete.</a>
-        </div>
+    <div class="card text-center">
+      <div class="card-header">
+        Your post
       </div>
+      <div class="card-body">
+        <h5 class="card-title">{{post.title}}</h5>
+        <p class="card-text">....</p>
+        <a href="/blog/{{post.id}}" class="btn btn-primary">Read</a>
+        <a href="#" class="btn btn-primary">Edit</a>
+      </div>
+      <div class="card-footer text-muted">
+        {{post.created}}
+      </div>
+    </div>
     {%endif%}
     {% endfor %}
 
+
     <form action="{% url 'user-profile' %}" method='POST'>
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type='submit' value='Save'>
+  
+      {% csrf_token %}
+      {{form.as_p}}
+      <input type='submit' value='Save'>
+
     </form>
+
 
 {% endblock %}

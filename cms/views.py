@@ -19,7 +19,7 @@ def post_search(request):
     queried_post = request.GET['q']
     post = None
     try:
-        post = Post.objects.get(name = queried_post)
+        post = Post.objects.get(title = queried_post)
         queried_post_exists = True
     except:
         queried_post_exists = False

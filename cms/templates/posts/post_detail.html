@@ -7,14 +7,17 @@
     <a href="/blog/" class="btn btn-primary"> <- See all posts</a>
     <h1>Post details</h1>
 
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">{{post.title}}</h5>
-          <p class="card-text">
-            {{post.body}}
-          </p>
-          <p class="card-text">{{post.created}}</p>
-        </div>
+    <div class="card text-center">
+      <div class="card-header">
+        {{post.author}}
       </div>
+      <div class="card-body">
+        <h5 class="card-title">{{post.title}}</h5>
+        <p class="card-text">{{post.body}}</p>
+      </div>
+      <div class="card-footer text-muted">
+        {{post.created}}
+      </div>
+    </div>
     
 {% endblock %}
