@@ -4,13 +4,32 @@
 
   {% include 'nav.html' %}
     
-  <form action="{% url 'add-post' %}" method="POST">
+
+
+<div class="container"></div>
+
+<div class="card"  style="padding: 5ch;">
+  <div class="card text-center">
+    <div class="card-header">
+      Add new post
+    </div>
+    <div class="card-body">
+      <form action="{% url 'add-post' %}" method="POST">
   
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Save">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Save">
+    
+      </form>
 
-  </form>
+    </div>
+    <div class="card-footer">
+      <a href="/accounts/profile" class="btn btn-primary">Return to profile</a>
+    </div>
 
-  <a href="/accounts/profile" class="btn btn-primary">Return to profile</a>
+  </div>
+</div>
+</div>
+
+
 {% endblock %}
