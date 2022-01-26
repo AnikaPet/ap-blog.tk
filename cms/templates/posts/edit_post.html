@@ -14,7 +14,7 @@
       Add new post
     </div>
     <div class="card-body">
-      <form action="{% url 'add-post' %}" method="POST">
+      <form action="" method="POST">
   
         {% csrf_token %}
         {{form.as_p}}
