@@ -4,7 +4,7 @@
 
   {% include 'nav.html' %}
 
-  <div class="containter" style="text-align-last: center;">
+  <div class="containter" style="text-align-last: center; padding:2ch ;">
   <div style="display: inline-block;">
       <h1 style="text-align:center;">Your posts</h1>
   </div>
@@ -13,20 +13,19 @@
   </div>
 </div>
 
-  <div class="container"  style="padding: 2ch;">
+  <div class="row row-cols-1 row-cols-md-2 g-4">
   
     {% for post in posts %}
     {%if post.author == request.user %}
-    
-    <div class="card"  style="padding: 5ch;">
+    <div class="col">
+    <div class="card" style = "padding: 2ch;">
     <div class="card text-center">
       <div class="card-header">
-        Your post
+       {{post.title}}
       </div>
       
-      <div class="card-body">
-        <h5 class="card-title">{{post.title}}</h5>
-        <p class="card-text">....</p>
+      <img class="card-img" style="opacity: .75" src="https://www.wbcsd.org/var/site/storage/images/overview/news-insights/general/news/wbcsd-to-support-the-task-force-on-nature-related-financial-disclosures-tnfd/150706-1-eng-GB/WBCSD-to-support-the-Task-Force-on-Nature-related-Financial-Disclosures-TNFD_i1140.jpg" class="card-img" alt="...">
+      <div class = "card-body">
         <a href="/blog/{{post.id}}" class="btn btn-primary">Read</a>
 
         <a href="/blog/edit-post/{{post.id}}" class="btn btn-primary">Edit</a>
@@ -38,6 +37,7 @@
         {{post.created}}
       </div>
     </div>
+  </div>
   </div>
     {%endif%}
     {% endfor %}

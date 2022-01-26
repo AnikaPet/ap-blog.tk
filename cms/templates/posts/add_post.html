@@ -4,11 +4,11 @@
 
   {% include 'nav.html' %}
     
-  <form action="{% url 'add-post' %}" method='POST'>
+  <form action="{% url 'add-post' %}" method="POST">
   
     {% csrf_token %}
     {{form.as_p}}
-    <input type='submit' value='Save'>
+    <input type="submit" value="Save">
 
   </form>
 
