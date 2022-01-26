@@ -5,6 +5,7 @@ class Post(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     title = models.TextField(max_length=300)
     body = models.TextField(max_length=3000)
+    img = models.TextField(max_length=500,default="")
     author = models.ForeignKey(User,related_name='post_author',on_delete=models.DO_NOTHING,null=True)
 
     def __str__(self):
