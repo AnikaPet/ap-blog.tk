@@ -9,6 +9,7 @@ def about_us(request):
 
 def post_listing(request):
     '''A view of all blog posts.'''
+
     categories = Category.objects.all()
     posts = Post.objects.all()  
     return render(request,'posts/post_listing.html',{'posts':posts,'categories':categories})
@@ -20,7 +21,7 @@ def post_details(request,post_id):
     return render(request,'posts/post_detail.html',{'post':post})
 
 def post_search(request):
-    '''A view of posts searched by title.'''
+    '''A view of all posts or posts in category searched by title.'''
 
     queried_post = request.GET['q']
     posts = None
@@ -65,3 +66,31 @@ def edit_post(request,post_id):
         obj.save()
 
     return render(request,'posts/edit_post.html',{'form':form,'post':post})
+
+def category_posts_listing(request,category_id):
+    '''A view of all posts in category.'''
+
+    categories = Category.objects.all()
+    posts = Post.objects.filter(category_id=category_id)
+    category = Category.objects.get(pk = category_id)
+    return render(request,'posts/post_listing.html',{'posts':posts,'categories':categories,'category_object':category})
+
+def category_listing(request):
+    '''A view of all categories.'''
+
+    return 1
+
+def add_category(request):
+    '''A view for adding new category.'''
+
+    return 1
+
+def edit_category(request):
+    '''A view for editing category.'''
+
+    return 1
+
+def delete_category(request):
+    '''A view for deleting category.'''
+
+    return 1
