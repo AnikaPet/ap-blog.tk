@@ -57,12 +57,11 @@ def add_post(request):
 def edit_post(request,post_id):
     '''A view for editing post.'''
 
-    posts = Post.objects.all()
-    instance = Post.objects.get(pk=post_id)
-    form = PostForm(request.POST or None,instance=instance)
+    post = Post.objects.get(pk=post_id)
+    form = PostForm(request.POST or None,instance=post)
     if form.is_valid():
         obj = form.save(commit=False)
         obj.author = request.user
         obj.save()
 
-    return render(request,'posts/edit_post.html',{'form':form,'posts':posts})
+    return render(request,'posts/edit_post.html',{'form':form,'post':post})
