@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Post
+from .models import Category, Post
 from .forms import PostForm
 
 def about_us(request):
@@ -9,9 +9,9 @@ def about_us(request):
 
 def post_listing(request):
     '''A view of all blog posts.'''
-
+    categories = Category.objects.all()
     posts = Post.objects.all()  
-    return render(request,'posts/post_listing.html',{'posts':posts})
+    return render(request,'posts/post_listing.html',{'posts':posts,'categories':categories})
 
 def post_details(request,post_id):
     '''A view of details of blog post.'''
