@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Category, Post
 from .forms import PostForm
 
@@ -40,7 +40,7 @@ def delete_post(request,post_id):
 
     post = Post.objects.get(pk=post_id)
     post.delete()
-    return render(request,'posts/delete_post.html',{'post':post})
+    return redirect('/accounts/profile/')
 
 def add_post(request):
     '''A view for adding new post.'''
@@ -74,23 +74,3 @@ def category_posts_listing(request,category_id):
     posts = Post.objects.filter(category_id=category_id)
     category = Category.objects.get(pk = category_id)
     return render(request,'posts/post_listing.html',{'posts':posts,'categories':categories,'category_object':category})
-
-def category_listing(request):
-    '''A view of all categories.'''
-
-    return 1
-
-def add_category(request):
-    '''A view for adding new category.'''
-
-    return 1
-
-def edit_category(request):
-    '''A view for editing category.'''
-
-    return 1
-
-def delete_category(request):
-    '''A view for deleting category.'''
-
-    return 1

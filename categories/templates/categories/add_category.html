@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'nav.html' %}
+    
+{%if user.is_superuser %}
+
+<div class="container"></div>
+
+<div class="card"  style="padding: 5ch;">
+  <div class="card text-center">
+    <div class="card-header">
+      Add new category
+    </div>
+    <div class="card-body">
+      <form action="" method="POST">
+  
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Save">
+    
+      </form>
+
+    </div>
+    <div class="card-footer">
+      <a href="/categories/" class="btn btn-primary">Return to categories</a>
+    </div>
+
+  </div>
+</div>
+</div>
+
+{% else %}
+
+<div class="col d-flex justify-content-center" style="padding: 5ch;">
+  <div class="card text-center"  style="width: 18rem;">
+    <div class="card-body">
+      <div class="alert alert-danger" role="alert">
+        You have no permission to see this page.
+      </div>
+      <a href="/blog/" class="btn btn-primary"> <- See all posts</a>
+    </div>
+  </div>
+  </div>
+
+{% endif %}
+{% endblock %}
