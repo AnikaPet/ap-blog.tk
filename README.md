@@ -4,6 +4,7 @@ Simple blog application using Django.
 ***
 The homepage will redirect to about us page. Page /blog will list all blog posts, and there will be a dedicated detail page for each individual post.
 Users can log in to the application or sign up. Once logged in, user can see all blog posts, but also Your profile page with their own blog posts. User can edit or delete their posts or add new one. Superuser can manage categories - add,edit or delete. 
+See application [here](https://ap-blog.tk/)!
 ***
 Installation
 ---
