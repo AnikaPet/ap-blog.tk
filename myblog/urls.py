@@ -6,9 +6,10 @@ from cms import views
 urlpatterns = [
 
     path('',views.about_us),
-    path('admin/', admin.site.urls),
+    #path('admin/', admin.site.urls),
     path('blog/',include('cms.urls')),
     path('accounts/', include('accounts.urls')), 
     path('accounts/', include('django.contrib.auth.urls')),
-    path('categories/',include('categories.urls'))
+    path('categories/',include('categories.urls')),
+    path('api/',include('api.urls'))
 ]
