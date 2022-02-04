@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'cms',
     'accounts',
     'categories',
-    'api'
+
 ]
 
 MIDDLEWARE = [
